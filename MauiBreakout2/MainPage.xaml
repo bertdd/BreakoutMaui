@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiBreakout2.MainPage">
+  <ScrollView x:Name="viewArea">
+    <AbsoluteLayout x:Name="gameArea">
+      <Image Source="background.jpg" x:Name="background" Aspect="Fill"
+            
+        />
+      
+      <Image
+                Source="cloud.png"
+                HorizontalOptions="Center"
+        AbsoluteLayout.LayoutBounds="0,0,100,100"
+        x:Name="cloud"
+        />
+
+      <Image
+                Source="sun.png"
+                HorizontalOptions="Center"
+        AbsoluteLayout.LayoutBounds="20,20,150,150"
+        x:Name="sun"
+        />
+
+      <Image
+                Source="cloud2.png"
+                HorizontalOptions="Center"
+        AbsoluteLayout.LayoutBounds="200,30,150,150"
+        x:Name="cloud2"
+        />
+
+      <Image
+                Source="plane.png"
+                HorizontalOptions="Center"
+        AbsoluteLayout.LayoutBounds="200,40,150,150"
+        x:Name="plane"
+        />
+
+      <Image
+                Source="Rainbow.png"
+                HorizontalOptions="Center"
+        AbsoluteLayout.LayoutBounds="700,150,350,350"
+        Opacity="0"
+        x:Name="rainbow"
+        />
+
+      <Image
+                Source="cactus.png"
+                HorizontalOptions="Center"
+        AbsoluteLayout.LayoutBounds="20,430,100,100"
+        x:Name="cactus"
+        />
+
+      <Image
+                Source="boris.png"
+                HorizontalOptions="Center"
+        AbsoluteLayout.LayoutBounds="250,250,200,200"
+        x:Name="bot"
+        />
+      <Image
+                Source="bird.png"
+                HorizontalOptions="Center"
+        AbsoluteLayout.LayoutBounds="0,0,100,100"
+        x:Name="dolphin"
+        />
+
+      
+      <Label Text="0000" x:Name="score" TextColor="Black"/>
+    </AbsoluteLayout>
+  </ScrollView>
+
+</ContentPage>
