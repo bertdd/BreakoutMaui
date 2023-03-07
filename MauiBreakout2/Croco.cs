@@ -1,10 +1,10 @@
 ﻿namespace MauiBreakout2;
 
-public class Boris : Image
+internal class Croco : GameObject
 {
-  public Boris()
+  public Croco()
   {
-    Source = "boris2.png";
+    Source = "croco.png";
     HorizontalOptions = LayoutOptions.Center;
   }
 }

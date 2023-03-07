@@ -1,18 +1,11 @@
-﻿using System.Numerics;
+﻿namespace MauiBreakout2;
 
-namespace MauiBreakout2;
-
-class Plane : Image
+class Plane : GameObject
 {
-  internal void Move(AbsoluteLayout gameArea, int step)
+  public Plane()
   {
-    var rect = gameArea.GetLayoutBounds(this);
-    var x = rect.X + step;
-    if (x < -rect.Width)
-    {
-      x = gameArea.Width;
-    }
-    var y = rect.Y;
-    gameArea.SetLayoutBounds(this, new Rect(x, y, rect.Width, rect.Height));
+    RotationY = 180;
+    Source = "plane.png";
+    HorizontalOptions = LayoutOptions.Center;
   }
 }

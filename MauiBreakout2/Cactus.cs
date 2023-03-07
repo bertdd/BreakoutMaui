@@ -1,10 +1,10 @@
 ﻿namespace MauiBreakout2;
 
-public class Boris : Image
+class Cactus : GameObject
 {
-  public Boris()
+  public Cactus()
   {
-    Source = "boris2.png";
+    Source = "cactus.png";
     HorizontalOptions = LayoutOptions.Center;
   }
 }

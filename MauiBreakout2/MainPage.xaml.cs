@@ -2,20 +2,17 @@
 {
   public partial class MainPage : ContentPage
   {
-    readonly IDispatcherTimer timer;
-
     public MainPage()
     {
       InitializeComponent();
 
-      timer = Dispatcher.CreateTimer();
+      var timer = Dispatcher.CreateTimer();
       timer.Interval = TimeSpan.FromMilliseconds(25);
       timer.IsRepeating = true;
       timer.Tick += Timer_Tick!;
       timer.Start();
 
       gameArea.SizeChanged += Layout_SizeChanged!;
-      plane.RotationY = 180;
     }
 
     private void Layout_SizeChanged(object sender, EventArgs e)
@@ -47,11 +44,9 @@
       cloud.Move(gameArea, 1);
       cloud2.Move(gameArea, 2);
       cloud3.Move(gameArea, 4);
-      plane.Move(gameArea, -20);
+      plane.Move(gameArea, -2);
       Rainbow();
     }
-
-    
 
     private void Rainbow()
     {

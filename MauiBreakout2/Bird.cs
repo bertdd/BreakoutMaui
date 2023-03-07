@@ -6,6 +6,8 @@ public class Bird : Image
   {
     Rotate = RotationY = 180;
     Rotation = 0;
+    Source = "bird.png";
+    HorizontalOptions = LayoutOptions.Center;
   }
 
   internal void Move(AbsoluteLayout gameArea, Boris boris)

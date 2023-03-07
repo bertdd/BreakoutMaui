@@ -1,10 +1,10 @@
 ﻿namespace MauiBreakout2;
 
-public class Boris : Image
+internal class Sun : Image
 {
-  public Boris()
+  public Sun()
   {
-    Source = "boris2.png";
+    Source = "sun.png";
     HorizontalOptions = LayoutOptions.Center;
   }
 }
