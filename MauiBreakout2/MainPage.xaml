@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiBreakout2.MainPage" x:Name="gameField"
              xmlns:local="clr-namespace:MauiBreakout2">
-  
+
   <ScrollView x:Name="viewArea">
     <AbsoluteLayout x:Name="gameArea">
-      
+
       <local:Background x:Name="background" />
 
       <local:Sun AbsoluteLayout.LayoutBounds="20,20,150,150"
@@ -38,12 +38,11 @@
 
       <local:Boris AbsoluteLayout.LayoutBounds="250,250,250,250"
                    x:Name="boris"/>
-      
+
       <local:Bird AbsoluteLayout.LayoutBounds="0,0,100,100"
                   x:Name="bird"/>
 
       <Label Text="0000" x:Name="score" TextColor="Black"/>
     </AbsoluteLayout>
   </ScrollView>
-
 </ContentPage>
