@@ -6,17 +6,12 @@
   
   <ScrollView x:Name="viewArea">
     <AbsoluteLayout x:Name="gameArea">
-      <Image Source="background.jpg" x:Name="background" Aspect="Fill"/>
+      <local:Background x:Name="background" />
 
-      <local:Cloud
-                Source="cloud.png"
-                HorizontalOptions="Center"
-        AbsoluteLayout.LayoutBounds="0,0,100,100"
-        x:Name="cloud"
-        />
+      <local:Cloud Source="cloud.png" HorizontalOptions="Center"
+        AbsoluteLayout.LayoutBounds="0,0,100,100" x:Name="cloud"/>
 
-      <Image
-                Source="sun.png"
+      <Image Source="sun.png"
                 HorizontalOptions="Center"
         AbsoluteLayout.LayoutBounds="20,20,150,150"
         x:Name="sun"
