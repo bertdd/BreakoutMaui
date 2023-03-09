@@ -36,6 +36,7 @@
       cloud2.Move(gameArea, 2);
       cloud3.Move(gameArea, 4);
       plane.Move(gameArea, -2);
+      plane2.Move(gameArea, 10);
       rainbow.Tick();
     }
 

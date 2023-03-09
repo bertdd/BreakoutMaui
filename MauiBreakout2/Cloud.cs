@@ -1,6 +1,4 @@
-﻿using System.Runtime.InteropServices;
-
-namespace MauiBreakout2;
+﻿namespace MauiBreakout2;
 
 class Cloud : GameObject
 {
