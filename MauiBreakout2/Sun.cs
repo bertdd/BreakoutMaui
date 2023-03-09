@@ -7,4 +7,10 @@ internal class Sun : Image
     Source = "sun.png";
     HorizontalOptions = LayoutOptions.Center;
   }
+
+  internal void Turn()
+  {
+
+    Rotation = Rotation + 0.1;
+  }
 }

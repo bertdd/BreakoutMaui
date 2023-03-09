@@ -38,6 +38,7 @@
       plane.Move(gameArea, -2);
       plane2.Move(gameArea, 10);
       rainbow.Tick();
+      sun.Turn();
     }
 
     readonly private PlayerControl Control = new();
