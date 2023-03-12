@@ -10,7 +10,6 @@ internal class Sun : Image
 
   internal void Turn()
   {
-
-    Rotation = Rotation + 0.1;
+    Rotation += 0.1;
   }
 }

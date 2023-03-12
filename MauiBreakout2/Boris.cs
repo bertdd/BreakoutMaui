@@ -1,6 +1,6 @@
 ﻿namespace MauiBreakout2;
 
-public class Boris : Image
+internal class Boris : GameObject
 {
   public Boris()
   {
@@ -13,10 +13,9 @@ public class Boris : Image
     if (deltaX != null)
     {
       var rect = gameArea.GetLayoutBounds(this);
-      var x = (double)((gameArea.Width - rect.Width) / 2 + deltaX *gameArea.Width / 2);
+      var x = (double)((gameArea.Width - rect.Width) / 2 + deltaX * gameArea.Width / 2);
       x = Math.Min(Math.Max(x, 0), gameArea.Width - rect.Width);
-      gameArea.SetLayoutBounds(this, new Rect(x,
-        gameArea.Height - rect.Height - 10, rect.Width, rect.Height));
+      gameArea.SetLayoutBounds(this, new Rect(x, rect.Y, rect.Width, rect.Height));
     }
   }
 }

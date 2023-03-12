@@ -12,16 +12,26 @@
       timer.Tick += Timer_Tick!;
       timer.Start();
 
-      gameArea.SizeChanged += Layout_SizeChanged!;
+      viewArea.SizeChanged += Layout_SizeChanged!;
     }
 
+    private void OnTapped(object sender, TappedEventArgs e)
+    {
+      var point = e.GetPosition(this);
+      if (point != null)
+      {
+        var borisX = (point?.X / gameArea.Width * 2) - 1.0;
+        boris.Move(gameArea, borisX);
+      }
+    }
+    
     private void Layout_SizeChanged(object sender, EventArgs e)
     {
-      var rect = gameArea.GetLayoutBounds(boris);
-      gameArea.SetLayoutBounds(boris, new Rect((Width - rect.Width) / 2,
-        Height - rect.Height - 10, rect.Width, rect.Height));
+      boris.AnchorBottom(gameArea, Height);
+      croco.AnchorBottom(gameArea, Height);
+      cactus.AnchorBottom(gameArea, Height);
       gameArea.SetLayoutBounds(background, new Rect(0, 0, Width, Height));
-      gameArea.SetLayoutBounds(rainbow, new Rect(Width - 400, Height - 450, 350, 350));
+      gameArea.SetLayoutBounds(rainbow, new Rect(gameArea.Width - 400, gameArea.Height - 450, 350, 350));
     }
 
     private void Timer_Tick(object sender, EventArgs e)
@@ -32,11 +42,13 @@
       }
 
       bird.Move(gameArea, boris);
-      cloud.Move(gameArea, 1);
-      cloud2.Move(gameArea, 2);
-      cloud3.Move(gameArea, 4);
-      plane.Move(gameArea, -2);
-      plane2.Move(gameArea, 10);
+      cloud.MoveHorizontal(gameArea, 1);
+      cloud2.MoveHorizontal(gameArea, 2);
+      cloud3.MoveHorizontal(gameArea, 4);
+      cloud4.MoveHorizontal(gameArea, 8);
+      plane.MoveHorizontal(gameArea, -2);
+      plane2.MoveHorizontal(gameArea, 10);
+      croco.MoveHorizontal(gameArea, -0.5);
       rainbow.Tick();
       sun.Turn();
     }
