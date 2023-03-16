@@ -29,9 +29,9 @@
     {
       boris.AnchorBottom(gameArea, Height);
       croco.AnchorBottom(gameArea, Height);
-      cactus.AnchorBottom(gameArea, Height);
+      cactus.AnchorBottom(gameArea, Height, 100);
+      rainbow.AnchorBottom(gameArea, Height);
       gameArea.SetLayoutBounds(background, new Rect(0, 0, Width, Height));
-      gameArea.SetLayoutBounds(rainbow, new Rect(gameArea.Width - 400, gameArea.Height - 450, 350, 350));
     }
 
     private void Timer_Tick(object sender, EventArgs e)

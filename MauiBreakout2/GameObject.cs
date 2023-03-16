@@ -21,13 +21,16 @@ internal abstract class GameObject : Image
     gameArea.SetLayoutBounds(this, new Rect(x, y, rectangle.Width, rectangle.Height));
   }
 
-  internal void AnchorBottom(AbsoluteLayout area, double height)
+  internal void AnchorBottom(AbsoluteLayout area, double height, double distance = 10)
   {
-    var rect = area.GetLayoutBounds(this);
-    if (rect.Height > 0 && rect.Width > 0)
+    var rectangle = area.GetLayoutBounds(this);
+    if (rectangle.Height > 0 && rectangle.Width > 0)
     {
-      area.SetLayoutBounds(this, new Rect(rect.X,
-      height - rect.Height - 10, rect.Width, rect.Height));
+      var newRectangle = 
+        new Rect(rectangle.X, height - rectangle.Height - distance, 
+                 rectangle.Width, rectangle.Height);
+
+      area.SetLayoutBounds(this, newRectangle);
     }
   }
 
