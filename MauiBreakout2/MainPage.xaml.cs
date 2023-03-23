@@ -45,7 +45,7 @@
 
       cloud1.MoveHorizontal(gameArea, 10);
       cloud2.MoveHorizontal(gameArea, 2);
-      cloud3.MoveHorizontal(gameArea, 20);
+      cloud3.MoveHorizontal(gameArea, -20);
       cloud4.MoveHorizontal(gameArea, 8);
       cloud5.MoveHorizontal(gameArea, -12);
 
