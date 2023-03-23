@@ -12,18 +12,18 @@ public class Bird : Image
 
   internal void Move(AbsoluteLayout gameArea, Boris boris)
   {
-    var rect = gameArea.GetLayoutBounds(this);
-    var x = rect.X + XDir * 10;
-    var y = rect.Y + YDir * 10;
+    var birdRectangle = gameArea.GetLayoutBounds(this);
+    var x = birdRectangle.X + XDir * 10;
+    var y = birdRectangle.Y + YDir * 10;
 
-    if (y + rect.Height > gameArea.Height || y < 0)
+    if (y + birdRectangle.Height > gameArea.Height || y < 0)
     {
       YDir = -YDir;
       Round = Round == 0 ? 90 : 0;
       this.RotateTo(Round);
     }
 
-    if (x + rect.Width > gameArea.Width || x < 0)
+    if (x + birdRectangle.Width > gameArea.Width || x < 0)
     {
       XDir = -XDir;
       Rotate = Rotate == 0 ? 180 : 0;
@@ -32,10 +32,10 @@ public class Bird : Image
 
     x = Math.Max(0, x);
     y = Math.Max(0, y);
-    x = Math.Min(gameArea.Width - rect.Width, x);
-    y = Math.Min(gameArea.Height - rect.Height, y);
+    x = Math.Min(gameArea.Width - birdRectangle.Width, x);
+    y = Math.Min(gameArea.Height - birdRectangle.Height, y);
 
-    gameArea.SetLayoutBounds(this, new Rect(x, y, rect.Width, rect.Height));
+    gameArea.SetLayoutBounds(this, new Rect(x, y, birdRectangle.Width, birdRectangle.Height));
     if (MoveStep == Tumble)
     {
       this.RotateTo(360);
@@ -43,8 +43,8 @@ public class Bird : Image
       Tumble = random.Next(20);
       XDir = -XDir;
     }
-    var botRect = gameArea.GetLayoutBounds(boris);
-    if (botRect.IntersectsWith(rect))
+    var borisRectangle = gameArea.GetLayoutBounds(boris);
+    if (borisRectangle.IntersectsWith(birdRectangle))
     {
       if (Wait == 0)
       {
