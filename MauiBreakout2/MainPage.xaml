@@ -56,7 +56,7 @@
       <local:Boris AbsoluteLayout.LayoutBounds="250,250,100,160"
                    x:Name="boris"/>
 
-      <local:Bird AbsoluteLayout.LayoutBounds="0,0,100,100"
+      <local:Bird AbsoluteLayout.LayoutBounds="0,0,100,100" CloudCollision="bird_CloudCollision"
                   x:Name="bird"/>
 
       <!--<Label Text="0000" x:Name="score" TextColor="Black"/>-->

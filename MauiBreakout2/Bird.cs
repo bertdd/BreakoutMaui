@@ -2,13 +2,13 @@
 
 public class Bird : Image
 {
-  public Bird()
-  {
-    Rotate = RotationY = 180;
-    Rotation = 0;
-    Source = "bird.png";
-    HorizontalOptions = LayoutOptions.Center;
-  }
+    public Bird()
+    {
+        Rotate = RotationY = 180;
+        Rotation = 0;
+        Source = "bird.png";
+        HorizontalOptions = LayoutOptions.Center;
+    }
 
   internal void Move(AbsoluteLayout gameArea, Boris boris)
   {
@@ -60,19 +60,23 @@ public class Bird : Image
     Tumble = random.Next(20);
   }
 
-  private int XDir = 1;
 
-  private int YDir = 1;
 
-  private double Round = 0;
+    private int XDir = 1;
 
-  private double Rotate = 0;
+    private int YDir = 1;
 
-  private int Tumble = 0;
+    private double Round = 0;
 
-  private int MoveStep = 0;
+    private double Rotate = 0;
 
-  private int Wait = 0;
+    private int Tumble = 0;
 
-  private readonly Random random = new();
+    private int MoveStep = 0;
+
+    private int Wait = 0;
+
+    private readonly Random random = new();
+
+    public event EventHandler<EventArgs>? CloudCollision;
 }
