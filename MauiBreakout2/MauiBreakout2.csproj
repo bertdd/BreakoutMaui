@@ -55,7 +55,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Images\841629.jpg" />
+	  <None Remove="Resources\Images\background2.jpg" />
 	  <None Remove="Resources\Images\oz.png" />
 	</ItemGroup>
 
