@@ -14,6 +14,7 @@ class Rainbow : GameObject
     if (Opacity < 1)
     {
       Opacity += 0.001;
+      //RotationY += 3;
     }
   }
 }

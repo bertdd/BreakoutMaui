@@ -19,6 +19,10 @@ public partial class PlayerControl
   public partial double? GetX()
   {
     var reading = Pad?.GetCurrentReading();
+    if (reading?.Buttons != 0)
+    {
+    
+    }
     return reading != null ? reading?.LeftThumbstickX : null;
   }
 

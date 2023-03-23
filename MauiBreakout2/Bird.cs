@@ -10,65 +10,55 @@ public class Bird : Image
         HorizontalOptions = LayoutOptions.Center;
     }
 
-    internal void Move(AbsoluteLayout gameArea, Boris boris, Cloud cloud)
+  internal void Move(AbsoluteLayout gameArea, Boris boris)
+  {
+    var birdRectangle = gameArea.GetLayoutBounds(this);
+    var x = birdRectangle.X + XDir * 10;
+    var y = birdRectangle.Y + YDir * 10;
+
+    if (y + birdRectangle.Height > gameArea.Height || y < 0)
     {
-        var rect = gameArea.GetLayoutBounds(this);
-        var x = rect.X + XDir * 10;
-        var y = rect.Y + YDir * 10;
-
-        if (y + rect.Height > gameArea.Height || y < 0)
-        {
-            YDir = -YDir;
-            Round = Round == 0 ? 90 : 0;
-            this.RotateTo(Round);
-        }
-
-        if (x + rect.Width > gameArea.Width || x < 0)
-        {
-            XDir = -XDir;
-            Rotate = Rotate == 0 ? 180 : 0;
-            this.RotateYTo(Rotate);
-        }
-
-        x = Math.Max(0, x);
-        y = Math.Max(0, y);
-        x = Math.Min(gameArea.Width - rect.Width, x);
-        y = Math.Min(gameArea.Height - rect.Height, y);
-
-        gameArea.SetLayoutBounds(this, new Rect(x, y, rect.Width, rect.Height));
-        if (MoveStep == Tumble)
-        {
-            this.RotateTo(360);
-            MoveStep = 0;
-            Tumble = random.Next(20);
-            XDir = -XDir;
-        }
-        var botRect = gameArea.GetLayoutBounds(boris);
-        if (botRect.IntersectsWith(rect))
-        {
-            if (Wait == 0)
-            {
-
-                XDir = -XDir;
-                YDir = -YDir;
-                Wait = 10;
-            }
-            else
-            {
-                Wait--;
-            }
-        }
-        var cloudRect = gameArea.GetLayoutBounds(cloud);
-        if (cloudRect.X != 0)
-        {
-
-            if (cloudRect.IntersectsWith(rect))
-            {
-                CloudCollision?.Invoke(this, EventArgs.Empty);
-            }
-        }
-        Tumble = random.Next(20);
+      YDir = -YDir;
+      Round = Round == 0 ? 90 : 0;
+      this.RotateTo(Round);
     }
+
+    if (x + birdRectangle.Width > gameArea.Width || x < 0)
+    {
+      XDir = -XDir;
+      Rotate = Rotate == 0 ? 180 : 0;
+      this.RotateYTo(Rotate);
+    }
+
+    x = Math.Max(0, x);
+    y = Math.Max(0, y);
+    x = Math.Min(gameArea.Width - birdRectangle.Width, x);
+    y = Math.Min(gameArea.Height - birdRectangle.Height, y);
+
+    gameArea.SetLayoutBounds(this, new Rect(x, y, birdRectangle.Width, birdRectangle.Height));
+    if (MoveStep == Tumble)
+    {
+      this.RotateTo(360);
+      MoveStep = 0;
+      Tumble = random.Next(20);
+      XDir = -XDir;
+    }
+    var borisRectangle = gameArea.GetLayoutBounds(boris);
+    if (borisRectangle.IntersectsWith(birdRectangle))
+    {
+      if (Wait == 0)
+      {
+        XDir = -XDir;
+        YDir = -YDir;
+        Wait = 10;
+      }
+      else
+      {
+        Wait--;
+      }
+    }
+    Tumble = random.Next(20);
+  }
 
 
 

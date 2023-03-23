@@ -18,24 +18,28 @@
       <local:Sun AbsoluteLayout.LayoutBounds="20,20,150,150"
                  x:Name="sun"/>
 
-      <local:Rainbow AbsoluteLayout.LayoutBounds="700,150,350,350"
+      <local:Rainbow AbsoluteLayout.LayoutBounds="700,150,650,650"
                      x:Name="rainbow"/>
 
       <local:Cloud Source="cloud.png"
-                   AbsoluteLayout.LayoutBounds="100,0,100,100"
-                   x:Name="cloud"/>
+                   AbsoluteLayout.LayoutBounds="0,0,100,100"
+                   x:Name="cloud1"/>
 
       <local:Cloud Source="cloud2.png"
                    AbsoluteLayout.LayoutBounds="200,30,150,150"
                    x:Name="cloud2"/>
 
       <local:Cloud Source="cloud.png"
-                   AbsoluteLayout.LayoutBounds="200,30,50,50"
+                   AbsoluteLayout.LayoutBounds="200,30,100,100"
                    x:Name="cloud3"/>
 
       <local:Cloud Source="cloud.png"
                    AbsoluteLayout.LayoutBounds="0,0,200,200"
                    x:Name="cloud4"/>
+
+      <local:Cloud Source="cloud.png"
+                   AbsoluteLayout.LayoutBounds="0,0,200,200"
+                   x:Name="cloud5"/>
 
       <local:Plane AbsoluteLayout.LayoutBounds="200,40,250,250"
                    x:Name="plane"/>
