@@ -16,18 +16,14 @@ namespace MauiBreakout2
                 currentImageIndex = (currentImageIndex + 1) % imageSources.Length;
                 var nextImageSource = imageSources[currentImageIndex];
 
-                if (nextImageSource == "background2.jpg")
+                this.FadeTo(0, 1000, Easing.Linear).ContinueWith((t) =>
                 {
-                    this.FadeTo(0, 1000, Easing.Linear).ContinueWith((t) =>
+                    MainThread.BeginInvokeOnMainThread(() =>
                     {
                         Source = nextImageSource;
                         this.FadeTo(1, 3000, Easing.Linear);
                     });
-                }
-                else
-                {
-                    Source = nextImageSource;
-                }
+                });
 
                 return true;
             });
