@@ -1,4 +1,4 @@
-﻿namespace MauiBreakout2
+namespace MauiBreakout2
 {
     internal class Background : Image
     {
@@ -21,7 +21,7 @@
                     this.FadeTo(0, 1000, Easing.Linear).ContinueWith((t) =>
                     {
                         Source = nextImageSource;
-                        this.FadeTo(1, 5000, Easing.Linear);
+                        this.FadeTo(1, 3000, Easing.Linear);
                     });
                 }
                 else
