@@ -34,7 +34,6 @@
             gameArea.SetLayoutBounds(background, new Rect(0, 0, Width, Height));
         }
 
-
         double zoomStep = 0.005f;
         double zoomMax = 1.6f;
         double zoomMin = 1.0f;
@@ -54,8 +53,6 @@
             cloud4.MoveHorizontal(gameArea, 8);
             cloud5.MoveHorizontal(gameArea, -12);
 
-
-
             if (ZoomIN && zoomfactor < zoomMax)
             {
                 zoomfactor += zoomStep;
@@ -68,11 +65,6 @@
             {
                 ZoomIN = !ZoomIN;
             }
-
-
-
-
-
 
             background.Scale = zoomfactor;
 
