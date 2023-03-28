@@ -21,7 +21,7 @@ internal abstract class GameObject : Image
     gameArea.SetLayoutBounds(this, new Rect(x, y, rectangle.Width, rectangle.Height));
   }
 
-  internal void AnchorBottom(AbsoluteLayout area, double height, double distance = 10)
+    internal void AnchorBottom(AbsoluteLayout area, double height, double distance = 10)
   {
     var rectangle = area.GetLayoutBounds(this);
     if (rectangle.Height > 0 && rectangle.Width > 0)
