@@ -5,7 +5,7 @@ class Plane : GameObject
   public Plane()
   {
     RotationY = 180;
-    Source = "plannnne.png";
+    Source = "plane.png";
     HorizontalOptions = LayoutOptions.Center;
   }
 }
