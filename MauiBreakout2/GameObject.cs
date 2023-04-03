@@ -2,47 +2,48 @@
 
 internal abstract class GameObject : Image
 {
-  internal void MoveHorizontal(AbsoluteLayout gameArea, double step, bool beak = false)
-  {
-    var rectangle = gameArea.GetLayoutBounds(this);
-    var x = rectangle.X + step;
-    if (x > gameArea.Width)
+    internal void MoveHorizontal(AbsoluteLayout gameArea, double step, bool beak = false)
     {
-      x = -Width;
-    }
-    else
-    {
+        var rectangle = gameArea.GetLayoutBounds(this);
+        var x = rectangle.X + step;
+        if (x > gameArea.Width)
+        {
+            x = -Width;
+        }
+        else
+        {
             if (beak)
             {
-                if (x < -rectangle.Width)
+                if (x < -rectangle.Width - 100)
                 {
-                    x = 200;
+                    x = gameArea.Width;
                 }
-            } else
+            }
+            else
             {
                 if (x < -rectangle.Width)
                 {
-                    x = 100;
+                    x = gameArea.Width;
                 }
             }
 
 
+        }
+        var y = rectangle.Y;
+        gameArea.SetLayoutBounds(this, new Rect(x, y, rectangle.Width, rectangle.Height));
     }
-    var y = rectangle.Y;
-    gameArea.SetLayoutBounds(this, new Rect(x, y, rectangle.Width, rectangle.Height));
-  }
 
     internal void AnchorBottom(AbsoluteLayout area, double height, double distance = 10)
     {
-    var rectangle = area.GetLayoutBounds(this);
-    if (rectangle.Height > 0 && rectangle.Width > 0)
-    {
-      var newRectangle = 
-        new Rect(rectangle.X, height - rectangle.Height - distance, 
-                 rectangle.Width, rectangle.Height);
+        var rectangle = area.GetLayoutBounds(this);
+        if (rectangle.Height > 0 && rectangle.Width > 0)
+        {
+            var newRectangle =
+              new Rect(rectangle.X, height - rectangle.Height - distance,
+                       rectangle.Width, rectangle.Height);
 
-      area.SetLayoutBounds(this, newRectangle);
+            area.SetLayoutBounds(this, newRectangle);
+        }
     }
-  }
 
 }
