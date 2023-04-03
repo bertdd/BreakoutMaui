@@ -29,6 +29,7 @@
         {
             boris.AnchorBottom(gameArea, Height);
             croco.AnchorBottom(gameArea, Height);
+            crocobeak.AnchorBottom(gameArea, Height, 25);
             cactus.AnchorBottom(gameArea, Height, 100);
             rainbow.AnchorBottom(gameArea, Height);
             gameArea.SetLayoutBounds(background, new Rect(0, 0, Width, Height));
@@ -70,7 +71,8 @@
 
             plane.MoveHorizontal(gameArea, -2);
             plane2.MoveHorizontal(gameArea, 10);
-            croco.MoveHorizontal(gameArea, -0.5);
+            croco.MoveHorizontal(gameArea, -15);
+            crocobeak.MoveHorizontal(gameArea, -15, true);
             rainbow.Tick();
             sun.Turn();
         }

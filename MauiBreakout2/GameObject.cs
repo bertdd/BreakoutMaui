@@ -2,7 +2,7 @@
 
 internal abstract class GameObject : Image
 {
-  internal void MoveHorizontal(AbsoluteLayout gameArea, double step)
+  internal void MoveHorizontal(AbsoluteLayout gameArea, double step, bool beak = false)
   {
     var rectangle = gameArea.GetLayoutBounds(this);
     var x = rectangle.X + step;
@@ -12,17 +12,28 @@ internal abstract class GameObject : Image
     }
     else
     {
-      if (x < -rectangle.Width)
-      {
-        x = gameArea.Width;
-      }
+            if (beak)
+            {
+                if (x < -rectangle.Width)
+                {
+                    x = 200;
+                }
+            } else
+            {
+                if (x < -rectangle.Width)
+                {
+                    x = 100;
+                }
+            }
+
+
     }
     var y = rectangle.Y;
     gameArea.SetLayoutBounds(this, new Rect(x, y, rectangle.Width, rectangle.Height));
   }
 
     internal void AnchorBottom(AbsoluteLayout area, double height, double distance = 10)
-  {
+    {
     var rectangle = area.GetLayoutBounds(this);
     if (rectangle.Height > 0 && rectangle.Width > 0)
     {
