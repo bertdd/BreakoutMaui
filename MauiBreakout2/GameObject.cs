@@ -8,7 +8,7 @@ internal abstract class GameObject : Image
     var x = rectangle.X + step;
     if (x > gameArea.Width)
     {
-      x = -Width;
+      x = Width;
     }
     else
     {
@@ -22,7 +22,7 @@ internal abstract class GameObject : Image
   }
 
     internal void AnchorBottom(AbsoluteLayout area, double height, double distance = 10)
-  {
+    {
     var rectangle = area.GetLayoutBounds(this);
     if (rectangle.Height > 0 && rectangle.Width > 0)
     {

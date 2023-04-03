@@ -4,62 +4,65 @@
              x:Class="MauiBreakout2.MainPage" x:Name="gameField"
              xmlns:local="clr-namespace:MauiBreakout2">
 
-  <ScrollView x:Name="viewArea">
-    <AbsoluteLayout x:Name="gameArea" HorizontalOptions="Fill">
+    <ScrollView x:Name="viewArea">
+        <AbsoluteLayout x:Name="gameArea" HorizontalOptions="Fill">
 
-      <AbsoluteLayout.GestureRecognizers>
-        <TapGestureRecognizer Tapped="OnTapped" NumberOfTapsRequired="1"/>
-      </AbsoluteLayout.GestureRecognizers>
-      
-      <local:Background x:Name="background" />
+            <AbsoluteLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnTapped" NumberOfTapsRequired="1"/>
+            </AbsoluteLayout.GestureRecognizers>
 
-      <Label x:Name="testLabel" Text="TEST" BackgroundColor="Black"/>
-      
-      <local:Sun AbsoluteLayout.LayoutBounds="20,20,150,150"
+            <local:Background x:Name="background" />
+
+            <Label x:Name="testLabel" Text="TEST" BackgroundColor="Black"/>
+
+            <local:Sun AbsoluteLayout.LayoutBounds="20,20,150,150"
                  x:Name="sun"/>
 
-      <local:Rainbow AbsoluteLayout.LayoutBounds="700,150,650,650"
+            <local:Rainbow AbsoluteLayout.LayoutBounds="700,150,650,650"
                      x:Name="rainbow"/>
 
-      <local:Cloud Source="cloud.png"
+            <local:Cloud Source="cloud.png"
                    AbsoluteLayout.LayoutBounds="0,0,100,100"
                    x:Name="cloud1"/>
 
-      <local:Cloud Source="cloud2.png"
+            <local:Cloud Source="cloud2.png"
                    AbsoluteLayout.LayoutBounds="200,30,150,150"
                    x:Name="cloud2"/>
 
-      <local:Cloud Source="cloud.png"
+            <local:Cloud Source="cloud.png"
                    AbsoluteLayout.LayoutBounds="200,30,100,100"
                    x:Name="cloud3"/>
 
-      <local:Cloud Source="cloud.png"
+            <local:Cloud Source="cloud.png"
                    AbsoluteLayout.LayoutBounds="0,0,200,200"
                    x:Name="cloud4"/>
 
-      <local:Cloud Source="cloud.png"
+            <local:Cloud Source="cloud.png"
                    AbsoluteLayout.LayoutBounds="0,0,200,200"
                    x:Name="cloud5"/>
 
-      <local:Plane AbsoluteLayout.LayoutBounds="200,40,250,250"
+            <local:Plane AbsoluteLayout.LayoutBounds="200,40,250,250"
                    x:Name="plane"/>
 
-      <local:Plane AbsoluteLayout.LayoutBounds="300,40,50,50"
+            <local:Plane AbsoluteLayout.LayoutBounds="300,40,50,50"
                    x:Name="plane2"/>
 
-      <local:Cactus AbsoluteLayout.LayoutBounds="20,430,100,100"
+            <local:Cactus AbsoluteLayout.LayoutBounds="20,430,100,100"
                     x:Name="cactus"/>
 
-      <local:Croco AbsoluteLayout.LayoutBounds="1200,600,300,125"
+            <local:Croco AbsoluteLayout.LayoutBounds="1200,600,1600,125"
                    x:Name="croco"/>
 
-      <local:Boris AbsoluteLayout.LayoutBounds="250,250,100,160"
+            <local:CrocoBeak AbsoluteLayout.LayoutBounds="1200,600,1270,125"
+                   x:Name="crocobeak"/>
+
+            <local:Boris AbsoluteLayout.LayoutBounds="250,250,100,160"
                    x:Name="boris"/>
 
-      <local:Bird AbsoluteLayout.LayoutBounds="0,0,100,100"
+            <local:Bird AbsoluteLayout.LayoutBounds="0,0,100,100"
                   x:Name="bird"/>
 
-      <!--<Label Text="0000" x:Name="score" TextColor="Black"/>-->
-    </AbsoluteLayout>
-  </ScrollView>
+            <!--<Label Text="0000" x:Name="score" TextColor="Black"/>-->
+        </AbsoluteLayout>
+    </ScrollView>
 </ContentPage>

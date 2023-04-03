@@ -4,7 +4,7 @@ internal class CrocoBeak : GameObject
 {
     public CrocoBeak()
     {
-        Source = "crocobreak.png";
+        Source = "crocobeak.png";
         HorizontalOptions = LayoutOptions.Center;
     }
 }

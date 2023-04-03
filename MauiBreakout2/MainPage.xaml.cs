@@ -28,7 +28,8 @@
         private void Layout_SizeChanged(object sender, EventArgs e)
         {
             boris.AnchorBottom(gameArea, Height);
-            croco.AnchorBottom(gameArea, Height);
+            croco.AnchorBottom(gameArea, Height, 300);
+            crocobeak.AnchorBottom(gameArea, Height, 220);
             cactus.AnchorBottom(gameArea, Height, 100);
             rainbow.AnchorBottom(gameArea, Height);
             gameArea.SetLayoutBounds(background, new Rect(0, 0, Width, Height));
@@ -70,7 +71,8 @@
 
             plane.MoveHorizontal(gameArea, -2);
             plane2.MoveHorizontal(gameArea, 10);
-            croco.MoveHorizontal(gameArea, -0.5);
+            croco.MoveHorizontal(gameArea, -3);
+            crocobeak.MoveHorizontal(gameArea, -3);
             rainbow.Tick();
             sun.Turn();
         }
