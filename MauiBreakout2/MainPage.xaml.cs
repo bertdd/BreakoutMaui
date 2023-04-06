@@ -77,8 +77,9 @@
 
             plane.MoveHorizontal(gameArea, -2);
             plane2.MoveHorizontal(gameArea, 10);
-            croco.MoveHorizontal(gameArea, -15);
-            crocobeak.MoveHorizontal(gameArea, -15, true);
+            croco.MoveHorizontal(gameArea, -5);
+            crocobeak.MoveHorizontal(gameArea, -5, true);
+            crocobeak.MoveVertical(gameArea);
             rainbow.Tick();
             sun.Turn();
         }

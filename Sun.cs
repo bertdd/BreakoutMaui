@@ -25,7 +25,7 @@ internal class Sun : Image
             {
                 isMovingUp = false;
             }
-            else if (TranslationY >= 500)
+            else if (TranslationY >= 800)
             {
                 isMovingUp = true;
             }

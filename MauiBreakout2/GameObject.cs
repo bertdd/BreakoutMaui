@@ -2,6 +2,8 @@
 
 internal abstract class GameObject : Image
 {
+    private int step = 3;
+
     internal void MoveHorizontal(AbsoluteLayout gameArea, double step, bool beak = false)
     {
         var rectangle = gameArea.GetLayoutBounds(this);
@@ -30,6 +32,25 @@ internal abstract class GameObject : Image
 
         }
         var y = rectangle.Y;
+        gameArea.SetLayoutBounds(this, new Rect(x, y, rectangle.Width, rectangle.Height));
+    }
+
+    internal void MoveVertical(AbsoluteLayout gameArea)
+    {
+
+        var rectangle = gameArea.GetLayoutBounds(this);
+        var x = rectangle.X;
+
+        var y = rectangle.Y + step;
+
+        if (y > gameArea.Height - 145)
+        {
+            step = -3;
+        }
+        else if (y < gameArea.Height - 155)
+        {
+            step = 3;
+        }
         gameArea.SetLayoutBounds(this, new Rect(x, y, rectangle.Width, rectangle.Height));
     }
 
