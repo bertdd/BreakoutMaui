@@ -58,6 +58,7 @@
 	  <None Remove="Resources\Images\background2.jpg" />
 	  <None Remove="Resources\Images\croco - Copy.png" />
 	  <None Remove="Resources\Images\oz.png" />
+	  <None Remove="Resources\Images\testcloud.png" />
 	</ItemGroup>
 
 	<ItemGroup>

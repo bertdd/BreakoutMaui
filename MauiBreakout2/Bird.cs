@@ -10,7 +10,7 @@ public class Bird : Image
     HorizontalOptions = LayoutOptions.Center;
   }
 
-  internal void Move(AbsoluteLayout gameArea, Boris boris)
+  internal void Move(AbsoluteLayout gameArea, Boris boris,Cloud cloud)
   {
     var birdRectangle = gameArea.GetLayoutBounds(this);
     var x = birdRectangle.X + XDir * 10;
@@ -58,7 +58,16 @@ public class Bird : Image
       }
     }
     Tumble = random.Next(20);
+    var cloudrect = gameArea.GetLayoutBounds(cloud);
+    if(cloudrect.X >= 60) { 
+        if (cloudrect.IntersectsWith(birdRectangle));
+        {
+            Cloudcollision?.Invoke(this, EventArgs.Empty);
+        }
+        }
   }
+
+  public event EventHandler<EventArgs>? Cloudcollision;
 
   private int XDir = 1;
 

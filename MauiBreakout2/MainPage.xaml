@@ -21,7 +21,7 @@
             <local:Rainbow AbsoluteLayout.LayoutBounds="700,150,650,650"
                      x:Name="rainbow"/>
 
-            <local:Cloud Source="cloud.png"
+            <local:Cloud Source="testcloud.png"
                    AbsoluteLayout.LayoutBounds="0,0,100,100"
                    x:Name="cloud1"/>
 

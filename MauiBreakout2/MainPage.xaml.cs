@@ -13,6 +13,12 @@
             timer.Start();
 
             viewArea.SizeChanged += Layout_SizeChanged!;
+            bird.Cloudcollision += Bird_Cloudcollision;
+        }
+
+        private void Bird_Cloudcollision(object? sender, EventArgs e)
+        {
+            
         }
 
         private void OnTapped(object sender, TappedEventArgs e)
@@ -46,7 +52,7 @@
                 boris.Move(gameArea, Control.GetX());
             }
 
-            bird.Move(gameArea, boris);
+            bird.Move(gameArea, boris,cloud1);
 
             cloud1.MoveHorizontal(gameArea, 10);
             cloud2.MoveHorizontal(gameArea, 2);
